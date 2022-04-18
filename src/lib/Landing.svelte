@@ -1,18 +1,18 @@
 <script>
 	import mainLogo from '../assets/main-logo.png';
 	import { fade } from 'svelte/transition';
-	import { onMount } from 'svelte'
+	import { onMount } from 'svelte';
 	let show = false;
-	onMount(()=>{
-		show=!show
-	})
+	onMount(() => {
+		show = !show;
+	});
 </script>
 
 {#if show}
-<div class="landing-container" transition:fade="{{ delay: 500, duration: 2000 }}">
-	<img src={mainLogo} alt="the svuture of data tables" />
-	<div class="landing-text">the <b><i>sv</i></b>uture of data-tables is here</div>
-	
+	<div class="landing-container" transition:fade={{ delay: 500, duration: 2000 }}>
+		<img src={mainLogo} alt="the svuture of data tables" />
+		<div class="landing-pronunciation"><em>[ <b>svel</b>-tuh-bel ]</em></div>
+		<div class="landing-text">the <b><i>sv</i></b>uture of data-tables is here</div>
 	</div>
 {/if}
 
@@ -23,18 +23,24 @@
 
 	.landing-container {
 		display: flex;
-    flex-direction: column;
+		flex-direction: column;
 		text-align: center;
 		align-items: center;
-		
 	}
 
 	.landing-text {
-    padding-top: 1rem;
+		padding-top: 1rem;
 		font-family: 'IBM Plex Sans', sans-serif;
 		color: white;
 		font-size: 24px;
 		font-weight: lighter;
 	}
-	
+
+	.landing-pronunciation {
+		padding-top: 1rem;
+		font-family: 'IBM Plex Sans', sans-serif;
+		color: #C8C8C8;
+		font-size: 24px;
+		font-weight: lighter;
+	}
 </style>
